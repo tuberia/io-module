@@ -1,0 +1,39 @@
+{
+  "name": "tuberia-io-module",
+  "version": "0.1.0",
+  "description": "This module provides file reading and writing support to your Tuberia pipeline.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm run build-test && ./node_modules/.bin/jasmine",
+    "build": "./node_modules/.bin/babel --optional es7.functionBind -d lib/ src/",
+    "build-test": "./node_modules/.bin/babel --plugins babel-plugin-rewire --optional es7.functionBind -d lib/ src/ && ./node_modules/.bin/babel --plugins babel-plugin-rewire --optional es7.functionBind -d spec/out/ spec/src/",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "mercurial",
+    "url": "https://bitbucket.org/tuberia/io-module"
+  },
+  "keywords": [
+    "tuberia",
+    "tuberia-module",
+    "io",
+    "files"
+  ],
+  "author": "Colin Bate <colin@colinbate.com>",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/tuberia/io-module#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.25",
+    "babel-plugin-rewire": "^0.1.22",
+    "jasmine": "^2.3.2",
+    "tuberia-core": "^1.0.0-rc.1"
+  },
+  "dependencies": {
+    "file-oath": "^1.0.0",
+    "path-is-absolute": "^1.0.0"
+  },
+  "peerDependencies": {
+    "tuberia-core": "^1.0.0-rc.1"
+  }
+}
